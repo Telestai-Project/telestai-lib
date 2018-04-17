@@ -12,8 +12,7 @@ var BufferWriter = ravencore.encoding.BufferWriter;
 var Opcode = ravencore.Opcode;
 var _ = require('lodash');
 
-var script_valid = require('../data/ravend/script_valid');
-var script_invalid = require('../data/ravend/script_invalid');
+var script_tests = require('../data/ravend/script_tests');
 var tx_valid = require('../data/ravend/tx_valid');
 var tx_invalid = require('../data/ravend/tx_invalid');
 
@@ -337,25 +336,27 @@ describe('Interpreter', function() {
     verified.should.equal(expected);
   };
   describe('ravend script evaluation fixtures', function() {
-    var testAllFixtures = function(set, expected) {
+    var testAllFixtures = function(set) {
       var c = 0;
       set.forEach(function(vector) {
         if (vector.length === 1) {
           return;
         }
         c++;
-        var descstr = vector[3];
+
         var fullScriptString = vector[0] + ' ' + vector[1];
+        var expected = vector[3] == 'OK';
+        var descstr = vector[4];
+
         var comment = descstr ? (' (' + descstr + ')') : '';
-        it('should pass script_' + (expected ? '' : 'in') + 'valid ' +
+        it('should ' + vector[3] + ' script_tests ' +
           'vector #' + c + ': ' + fullScriptString + comment,
           function() {
             testFixture(vector, expected);
           });
       });
     };
-    testAllFixtures(script_valid, true);
-    testAllFixtures(script_invalid, false);
+    testAllFixtures(script_tests);
 
   });
   describe('ravend transaction evaluation fixtures', function() {
@@ -370,8 +371,8 @@ describe('Interpreter', function() {
         it('should pass tx_' + (expected ? '' : 'in') + 'valid vector ' + cc, function() {
           var inputs = vector[0];
           var txhex = vector[1];
-          var flags = getFlags(vector[2]);
 
+          var flags = getFlags(vector[2]);
           var map = {};
           inputs.forEach(function(input) {
             var txid = input[0];
