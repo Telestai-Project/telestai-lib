@@ -70,4 +70,5 @@ or create a test coverage report (you can open `coverage/lcov-report/index.html`
 Code released under [the MIT license](https://github.com/underdarkskies/ravencore-lib/blob/master/LICENSE).
 
 Copyright 2018-2019 UnderDarkSkies
+
 Copyright 2013-2017 BitPay, Inc. 
