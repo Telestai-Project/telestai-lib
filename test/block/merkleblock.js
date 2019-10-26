@@ -155,7 +155,7 @@ describe('MerkleBlock', function() {
   describe('#filterdTxsHash', function() {
 
     it('should validate good merkleblocks', function() {
-      var hashOfFilteredTx = '6f64fd5aa9dd01f74c03656d376625cf80328d83d9afebe60cc68b8f0e245bd9' 
+      var hashOfFilteredTx = 'ef580a0eb8f79711249f0fb1df5fffa7297fd85f2643a5c06f28a874af03e1c3' 
       var b = MerkleBlock(data.JSON[3]);
       b.filterdTxsHash()[0].should.equal(hashOfFilteredTx);
     });

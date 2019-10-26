@@ -83,33 +83,28 @@ module.exports = {
         bits : 453193653,
       }
     },
-    { // Mainnet FilteredBlock 399775 with filter: 6f64fd5aa9dd01f74c03656d376625cf80328d83d9afebe60cc68b8f0e245bd9
-      "header": {
-      "hash": "0000000000000000011b04bc9f4f3856e299b53a335eb1c42be906237c860bb8",
-      "version": 4,
-      "prevHash": "0000000000000000015373947aa93c7cb16a308fb0a59644d4123072ad24ce5b",
-      "merkleRoot": "ac1841eb3b7d380ee114270e3b1c7df349f1e27e2f0f7891138199bc07e006f8",
-      "time": 1456274787,
-      "bits": 403093919,
-      "nonce": 736568686
-      },
-      "numTransactions": 3309,
-      "hashes": [
-        "adaf1e41a5349a7e2b27e6f2b5fc1186d576d21b47531a410a654439f49bd5a9",
-        "0f64562b6d361757bfdc5926d28cafb7c45e4822b4ad5a14e65530d0c9d44cd2",
-        "c34dec8d5954d8c151c3a594a5a6d1f3a1ec8a1a6c470b27aea879b7757328fb",
-        "c044e5d998fe29cdbe88f87c97c3547f142f5b491cb909d9b0a8e9d3ab7fc984",
-        "51ecd2d2b02b0ca1a3b439eae3adf87ab37dd87f7be0c5b3437cd22350079101",
-        "684ebe37c6eaae2879249ff20b3769d5f2f7ad853a5363a4baee68c0c85777a5",
-        "e561fbeb0faff42f95f2dc8d57d432d4d1a9f84483597a0602e1edc3390f1e33",
-        "02c070afc743c885a6c8d94d15d6e9c3b991c636b4284258dd37686c8792fe44",
-        "6f64fd5aa9dd01f74c03656d376625cf80328d83d9afebe60cc68b8f0e245bd9",
-        "a296fef97b3da0825bac00c794ea234913421b7c1cbb8571978d8d5ba3b16de2",
-        "691c6855c5da434a06cb39a7e47d9337da0e39112ad975cc70cecc882233920a",
-        "6a9e7f8e6d1d8c326a774ff691bdf424252cee710f8e5d9da2c094e999c15efc",
-        "0723ffc695fef989e86784fa2b47097d55f6aac244631536d8d901f5cd9bf170"
-        ],
-      "flags": [171,86,23,0]
+    { // Mainnet FilteredBlock 220639 with filter: ef580a0eb8f79711249f0fb1df5fffa7297fd85f2643a5c06f28a874af03e1c3
+      flags : [
+        175, 0
+      ],
+      numTransactions : 32,
+      hashes : [
+        "52ce9c6b303ef36ba760dd5cc64fc1b548c1776cc03e9a2801b74180645dcc2d",
+        "c4ff4cc899751c23785a9d28326f83e94a6b494ecdedff60a1c316cc7bc84beb",
+        "ef580a0eb8f79711249f0fb1df5fffa7297fd85f2643a5c06f28a874af03e1c3",
+        "d9373fd883cfc0421b8f29a9c05afba77dea489d90f757d0139967df5266f73a",
+        "3ad2f6c76c4df9bf8d07b51480366bd464e9241dc7f96686f0a8d81941f896c1",
+        "cc0a156e194ebf1ff9a7233b555f9cdcbc012cbcc6dfb362b8e26be7ba5b7e29" 
+      ],
+      header : {
+        hash: "000000000002836164c4a120395e043197b8fccecaaa6fd20621504d81f5dff1",
+        prevHash : "0000000000018eacafc2cb1271af70a7d9d216181f4c7c836927a1b3de9786b0",
+        merkleRoot : "27ec53687bb9e56465024eb30e23388e9dce29fe7254add1560295f7fcb270a4",
+        time : 1526856718,
+        version : 536870912,
+        nonce : 3812291672,
+        bits : 453193653,
+      }
     }
   ]
 };
