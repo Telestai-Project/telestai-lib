@@ -98,14 +98,14 @@
     "elliptic": "6.4.0",
     "inherits": "2.0.1",
     "lodash": "4.17.4",
-    "node-x16r": "underdarkskies/node-x16r",
-    "node-x16rv2": "underdarkskies/x16rv2_hash"
+    "node-x16r": "github:underdarkskies/node-x16r",
+    "node-x16rv2": "github:underdarkskies/x16rv2_hash"
   },
   "devDependencies": {
-    "ravencore-build": "underdarkskies/ravencore-build",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
     "gulp": "^3.8.10",
+    "ravencore-build": "github:underdarkskies/ravencore-build",
     "sinon": "^1.13.0"
   },
   "license": "MIT"
