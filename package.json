@@ -22,50 +22,6 @@
     {
       "name": "Traysi",
       "email": ""
-    },
-    {
-      "name": "Daniel Cousens",
-      "email": "bitcoin@dcousens.com"
-    },
-    {
-      "name": "Esteban Ordano",
-      "email": "eordano@gmail.com"
-    },
-    {
-      "name": "Gordon Hall",
-      "email": "gordon@bitpay.com"
-    },
-    {
-      "name": "Jeff Garzik",
-      "email": "jgarzik@bitpay.com"
-    },
-    {
-      "name": "Kyle Drake",
-      "email": "kyle@kyledrake.net"
-    },
-    {
-      "name": "Manuel Araoz",
-      "email": "manuelaraoz@gmail.com"
-    },
-    {
-      "name": "Matias Alejo Garcia",
-      "email": "ematiu@gmail.com"
-    },
-    {
-      "name": "Ryan X. Charles",
-      "email": "ryanxcharles@gmail.com"
-    },
-    {
-      "name": "Stefan Thomas",
-      "email": "moon@justmoon.net"
-    },
-    {
-      "name": "Stephen Pair",
-      "email": "stephen@bitpay.com"
-    },
-    {
-      "name": "Wei Lu",
-      "email": "luwei.here@gmail.com"
     }
   ],
   "keywords": [
@@ -97,7 +53,7 @@
     "buffer-compare": "1.1.1",
     "elliptic": "6.4.0",
     "inherits": "2.0.1",
-    "lodash": "4.17.4",
+    "lodash": "^4.17.15",
     "node-x16r": "github:underdarkskies/node-x16r",
     "node-x16rv2": "github:underdarkskies/x16rv2_hash"
   },

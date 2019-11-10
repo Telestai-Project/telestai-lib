@@ -30,7 +30,7 @@ describe('Transaction', function() {
   });
 
   it('should parse the version as a signed integer', function () {
-    var transaction = Transaction('ffffffff0000ffffffff')
+    var transaction = Transaction('ffffffff0000ffffffff');
     transaction.version.should.equal(-1);
     transaction.nLockTime.should.equal(0xffffffff);
   });
@@ -802,7 +802,7 @@ describe('Transaction', function() {
         .to([
           {address: toAddress, satoshis: 40000000},
           {address: toAddress, satoshis: 40000000}
-        ])
+        ]);
       transaction.outputs.length.should.equal(2);
       transaction.outputAmount.should.equal(80000000);
       transaction.removeOutput(0);
@@ -885,7 +885,7 @@ describe('Transaction', function() {
       var copy = new Transaction(serialized_tx);
       serialized_tx.should.equal(copy.uncheckedSerialize());
       copy.inputs[0].sequenceNumber
-      .should.equal(Transaction.Input.DEFAULT_LOCKTIME_SEQNUMBER)
+      .should.equal(Transaction.Input.DEFAULT_LOCKTIME_SEQNUMBER);
     });
     it('should serialize correctly for a block height locktime', function() {
       var transaction= new Transaction()
@@ -895,7 +895,7 @@ describe('Transaction', function() {
       var copy = new Transaction(serialized_tx);
       serialized_tx.should.equal(copy.uncheckedSerialize());
       copy.inputs[0].sequenceNumber
-      .should.equal(Transaction.Input.DEFAULT_LOCKTIME_SEQNUMBER)
+      .should.equal(Transaction.Input.DEFAULT_LOCKTIME_SEQNUMBER);
     });
   });
 
@@ -1007,7 +1007,7 @@ describe('Transaction', function() {
       expect(function() {
         tx.shuffleOutputs();
       }).to.not.throw(errors.Transaction.InvalidSorting);
-    })
+    });
   });
 
   describe('clearOutputs', function() {
@@ -1105,7 +1105,7 @@ describe('Transaction', function() {
         it(inputSet.description, function() {
           var tx = new Transaction();
           inputSet.inputs = inputSet.inputs.map(function(input) {
-            var input = new Input({
+            input = new Input({
               prevTxId: input.txId,
               outputIndex: input.vout,
               script: new Script(),
@@ -1581,7 +1581,7 @@ describe('Transaction', function() {
           check.should.equal(true);
 
           interpreter = new Interpreter();
-          flags = Interpreter.SCRIPT_VERIFY_P2SH | Interpreter.SCRIPT_VERIFY_WITNESS;;
+          flags = Interpreter.SCRIPT_VERIFY_P2SH | Interpreter.SCRIPT_VERIFY_WITNESS;
           check = interpreter.verify(scriptSig, scriptPubkey, input2, 0, flags, witnesses, satoshis);
           check.should.equal(false);
         });
@@ -1602,7 +1602,7 @@ describe('Transaction', function() {
           check.should.equal(true);
 
           interpreter = new Interpreter();
-          flags = Interpreter.SCRIPT_VERIFY_P2SH | Interpreter.SCRIPT_VERIFY_WITNESS;;
+          flags = Interpreter.SCRIPT_VERIFY_P2SH | Interpreter.SCRIPT_VERIFY_WITNESS;
           check = interpreter.verify(scriptSig, scriptPubkey, input1, 0, flags, witnesses, satoshis);
           check.should.equal(true);
         });
@@ -1623,7 +1623,7 @@ describe('Transaction', function() {
           check.should.equal(true);
 
           interpreter = new Interpreter();
-          flags = Interpreter.SCRIPT_VERIFY_P2SH | Interpreter.SCRIPT_VERIFY_WITNESS;;
+          flags = Interpreter.SCRIPT_VERIFY_P2SH | Interpreter.SCRIPT_VERIFY_WITNESS;
           check = interpreter.verify(scriptSig, scriptPubkey, input2, 0, flags, witnesses, satoshis);
           check.should.equal(false);
         });
@@ -1665,7 +1665,7 @@ describe('Transaction', function() {
 
 var tx_empty_hex = '01000000000000000000';
 
-/* jshint maxlen: 1000 */
+/* jshint maxlen: 7081 */
 var tx_1_hex = '01000000015884e5db9de218238671572340b207ee85b628074e7e467096c267266baf77a4000000006a473044022013fa3089327b50263029265572ae1b022a91d10ac80eb4f32f291c914533670b02200d8a5ed5f62634a7e1a0dc9188a3cc460a986267ae4d58faf50c79105431327501210223078d2942df62c45621d209fab84ea9a7a23346201b7727b9b45a29c4e76f5effffffff0150690f00000000001976a9147821c0a3768aa9d1a37e16cf76002aef5373f1a888ac00000000';
 var tx_1_id = '779a3e5b3c2c452c85333d8521f804c1a52800e60f4b7c3bbe36f4bab350b72c';
 

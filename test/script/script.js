@@ -31,7 +31,7 @@ describe('Script', function() {
     it('should be object', function() {
       expect(function() {
         script.set(null);
-      }).to.throw(/^Invalid Argument$/)
+      }).to.throw(/^Invalid Argument$/);
     });
 
     it('chunks should be array', function() {

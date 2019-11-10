@@ -326,7 +326,7 @@ describe('Interpreter', function() {
   };
 
   var testFixture = function(vector, expected, witness, amount) {
-    var amount = amount || 0;
+    amount = amount || 0;
     var scriptSig = Script.fromRavendString(vector[0]);
     var scriptPubkey = Script.fromRavendString(vector[1]);
     var flags = getFlags(vector[2]);

@@ -16,56 +16,6 @@ var validbase58 = require('./data/ravend/base58_keys_valid.json');
 var invalidbase58 = require('./data/ravend/base58_keys_invalid.json');
 
 describe('Address', function() {
-
-  var pubkeyhash = new Buffer('ef8f3e801046d34fe00dde3bd33df6f887c6c327', 'hex');
-  var buf = Buffer.concat([new Buffer([60]), pubkeyhash]);
-  var str = 'RX7sB98VUdBiVLaPVkE5Whbhnd3RWcNd3C';
-
-  it('can\'t build without data', function() {
-    (function() {
-      return new Address();
-    }).should.throw('First argument is required, please include address data.');
-  });
-
-  it('should throw an error because of bad network param', function() {
-    (function() {
-      return new Address(PKHLivenet[0], 'main', 'pubkeyhash');
-    }).should.throw('Second argument must be "livenet" or "testnet".');
-  });
-
-  it('should throw an error because of bad type param', function() {
-    (function() {
-      return new Address(PKHLivenet[0], 'livenet', 'pubkey');
-    }).should.throw('Third argument must be "pubkeyhash" or "scripthash"');
-  });
-
-  describe('ravend compliance', function() {
-    validbase58.map(function(d) {
-      if (!d[2].isPrivkey) {
-        it('should describe address ' + d[0] + ' as valid', function() {
-          var type;
-          if (d[2].addrType === 'script') {
-            type = 'scripthash';
-          } else if (d[2].addrType === 'pubkey') {
-            type = 'pubkeyhash';
-          }
-          var network = 'livenet';
-          if (d[2].isTestnet) {
-            network = 'testnet';
-          }
-          return new Address(d[0], network, type);
-        });
-      }
-    });
-    invalidbase58.map(function(d) {
-      it('should describe input ' + d[0].slice(0, 10) + '... as invalid', function() {
-        expect(function() {
-          return new Address(d[0]);
-        }).to.throw(Error);
-      });
-    });
-  });
-
   // livenet valid
   var PKHLivenet = [
     'RGRsG7UQc3AmvdrhPDngpPjvTNhJQFeHYj',
@@ -115,6 +65,55 @@ describe('Address', function() {
     'mursDVxqNQmmwWHACpM9VHwVVSfTddGsEM',
     'mtX8nPZZdJ8d3QNLRJ1oJTiEi26Sj6LQXS'
   ];
+  
+  var pubkeyhash = new Buffer('ef8f3e801046d34fe00dde3bd33df6f887c6c327', 'hex');
+  var buf = Buffer.concat([new Buffer([60]), pubkeyhash]);
+  var str = 'RX7sB98VUdBiVLaPVkE5Whbhnd3RWcNd3C';
+
+  it('can\'t build without data', function() {
+    (function() {
+      return new Address();
+    }).should.throw('First argument is required, please include address data.');
+  });
+
+  it('should throw an error because of bad network param', function() {
+    (function() {
+      return new Address(PKHLivenet[0], 'main', 'pubkeyhash');
+    }).should.throw('Second argument must be "livenet" or "testnet".');
+  });
+
+  it('should throw an error because of bad type param', function() {
+    (function() {
+      return new Address(PKHLivenet[0], 'livenet', 'pubkey');
+    }).should.throw('Third argument must be "pubkeyhash" or "scripthash"');
+  });
+
+  describe('ravend compliance', function() {
+    validbase58.map(function(d) {
+      if (!d[2].isPrivkey) {
+        it('should describe address ' + d[0] + ' as valid', function() {
+          var type;
+          if (d[2].addrType === 'script') {
+            type = 'scripthash';
+          } else if (d[2].addrType === 'pubkey') {
+            type = 'pubkeyhash';
+          }
+          var network = 'livenet';
+          if (d[2].isTestnet) {
+            network = 'testnet';
+          }
+          return new Address(d[0], network, type);
+        });
+      }
+    });
+    invalidbase58.map(function(d) {
+      it('should describe input ' + d[0].slice(0, 10) + '... as invalid', function() {
+        expect(function() {
+          return new Address(d[0]);
+        }).to.throw(Error);
+      });
+    });
+  });
 
   describe('validation', function() {
 
