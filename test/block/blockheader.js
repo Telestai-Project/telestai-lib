@@ -1,11 +1,11 @@
 'use strict';
 
-var ravencore = require('../..');
+var telestaicore = require('../..');
 var BN = require('../../lib/crypto/bn');
-var BufferReader = ravencore.encoding.BufferReader;
-var BufferWriter = ravencore.encoding.BufferWriter;
+var BufferReader = telestaicore.encoding.BufferReader;
+var BufferWriter = telestaicore.encoding.BufferWriter;
 
-var BlockHeader = ravencore.BlockHeader;
+var BlockHeader = telestaicore.BlockHeader;
 var fs = require('fs');
 var should = require('chai').should();
 

@@ -1,7 +1,7 @@
 'use strict';
 
-var ravencore = require('../..');
-var Random = ravencore.crypto.Random;
+var telestaicore = require('../..');
+var Random = telestaicore.crypto.Random;
 
 describe('Random', function() {
 

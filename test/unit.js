@@ -3,9 +3,9 @@
 var should = require('chai').should();
 var expect = require('chai').expect;
 
-var ravencore = require('..');
-var errors = ravencore.errors;
-var Unit = ravencore.Unit;
+var telestaicore = require('..');
+var errors = telestaicore.errors;
+var Unit = telestaicore.Unit;
 
 describe('Unit', function() {
 

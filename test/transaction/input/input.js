@@ -4,13 +4,13 @@ var should = require('chai').should();
 var expect = require('chai').expect;
 var _ = require('lodash');
 
-var ravencore = require('../../..');
-var errors = ravencore.errors;
-var PrivateKey = ravencore.PrivateKey;
-var Address = ravencore.Address;
-var Script = ravencore.Script;
-var Networks = ravencore.Networks;
-var Input = ravencore.Transaction.Input;
+var telestaicore = require('../../..');
+var errors = telestaicore.errors;
+var PrivateKey = telestaicore.PrivateKey;
+var Address = telestaicore.Address;
+var Script = telestaicore.Script;
+var Networks = telestaicore.Networks;
+var Input = telestaicore.Transaction.Input;
 
 describe('Transaction.Input', function() {
 

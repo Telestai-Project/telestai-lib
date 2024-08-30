@@ -2,14 +2,14 @@
 
 var should = require('chai').should();
 var expect = require('chai').expect;
-var ravencore = require('../..');
+var telestaicore = require('../..');
 
-var BufferUtil = ravencore.util.buffer;
-var Script = ravencore.Script;
-var Networks = ravencore.Networks;
-var Opcode = ravencore.Opcode;
-var PublicKey = ravencore.PublicKey;
-var Address = ravencore.Address;
+var BufferUtil = telestaicore.util.buffer;
+var Script = telestaicore.Script;
+var Networks = telestaicore.Networks;
+var Opcode = telestaicore.Opcode;
+var PublicKey = telestaicore.PublicKey;
+var Address = telestaicore.Address;
 
 describe('Script', function() {
 
@@ -294,7 +294,7 @@ describe('Script', function() {
       // from txid: 5c85ed63469aa9971b5d01063dbb8bcdafd412b2f51a3d24abf2e310c028bbf8
       // and input index: 5
       var scriptBuffer = new Buffer('483045022050eb59c79435c051f45003d9f82865c8e4df5699d7722e77113ef8cadbd92109022100d4ab233e070070eb8e0e62e3d2d2eb9474a5bf135c9eda32755acb0875a6c20601', 'hex');
-      var script = ravencore.Script.fromBuffer(scriptBuffer);
+      var script = telestaicore.Script.fromBuffer(scriptBuffer);
       script.isPublicKeyIn().should.equal(true);
     });
   });
@@ -754,8 +754,8 @@ describe('Script', function() {
 
   describe('#buildWitnessMultisigOutFromScript', function() {
     it('it will build nested witness scriptSig', function() {
-      var redeemScript = ravencore.Script();
-      var redeemHash = ravencore.crypto.Hash.sha256(redeemScript.toBuffer());
+      var redeemScript = telestaicore.Script();
+      var redeemHash = telestaicore.crypto.Hash.sha256(redeemScript.toBuffer());
       var s = Script.buildWitnessMultisigOutFromScript(redeemScript);
       var buf = s.toBuffer();
       buf[0].should.equal(0);
@@ -1061,7 +1061,7 @@ describe('Script', function() {
     });
     it('should handle P2SH-multisig-in scripts from utility', function() {
       // create a well-formed signature, does not need to match pubkeys
-      var signature = ravencore.crypto.Signature.fromString('30060201FF0201FF');
+      var signature = telestaicore.crypto.Signature.fromString('30060201FF0201FF');
       var signatures = [ signature.toBuffer() ];
       var p2sh = Script.buildP2SHMultisigIn(pubKeyHexes, 1, signatures, {});
       p2sh.getSignatureOperationsCount(true).should.equal(0);

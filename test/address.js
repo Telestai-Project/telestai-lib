@@ -6,11 +6,11 @@ var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
 
-var ravencore = require('..');
-var PublicKey = ravencore.PublicKey;
-var Address = ravencore.Address;
-var Script = ravencore.Script;
-var Networks = ravencore.Networks;
+var telestaicore = require('..');
+var PublicKey = telestaicore.PublicKey;
+var Address = telestaicore.Address;
+var Script = telestaicore.Script;
+var Networks = telestaicore.Networks;
 
 var validbase58 = require('./data/ravend/base58_keys_valid.json');
 var invalidbase58 = require('./data/ravend/base58_keys_invalid.json');
@@ -258,7 +258,7 @@ describe('Address', function() {
     it('should error because of unrecognized data format', function() {
       (function() {
         return new Address(new Error());
-      }).should.throw(ravencore.errors.InvalidArgument);
+      }).should.throw(telestaicore.errors.InvalidArgument);
     });
 
     it('should error because of incorrect format for pubkey hash', function() {
@@ -461,7 +461,7 @@ describe('Address', function() {
     it('will fail with invalid state', function() {
       expect(function() {
         return Address.fromObject('¹');
-      }).to.throw(ravencore.errors.InvalidState);
+      }).to.throw(telestaicore.errors.InvalidState);
     });
   });
 

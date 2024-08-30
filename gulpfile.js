@@ -1,5 +1,5 @@
 
 
-var ravencoreTasks = require('ravencore-build');
+var telestaicoreTasks = require('telestaicore-build');
 
-ravencoreTasks('lib');
+telestaicoreTasks('lib');

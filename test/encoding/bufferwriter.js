@@ -1,10 +1,10 @@
 'use strict';
 
-var ravencore = require('../..');
+var telestaicore = require('../..');
 var should = require('chai').should();
-var BufferWriter = ravencore.encoding.BufferWriter;
-var BufferReader = ravencore.encoding.BufferReader;
-var BN = ravencore.crypto.BN;
+var BufferWriter = telestaicore.encoding.BufferWriter;
+var BufferReader = telestaicore.encoding.BufferReader;
+var BN = telestaicore.crypto.BN;
 
 describe('BufferWriter', function() {
 

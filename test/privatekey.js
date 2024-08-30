@@ -4,12 +4,12 @@ var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
 
-var ravencore = require('..');
-var BN = ravencore.crypto.BN;
-var Point = ravencore.crypto.Point;
-var PrivateKey = ravencore.PrivateKey;
-var Networks = ravencore.Networks;
-var Base58Check = ravencore.encoding.Base58Check;
+var telestaicore = require('..');
+var BN = telestaicore.crypto.BN;
+var Point = telestaicore.crypto.Point;
+var PrivateKey = telestaicore.PrivateKey;
+var Networks = telestaicore.Networks;
+var Base58Check = telestaicore.encoding.Base58Check;
 
 var validbase58 = require('./data/ravend/base58_keys_valid.json');
 var invalidbase58 = require('./data/ravend/base58_keys_invalid.json');

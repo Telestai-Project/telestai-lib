@@ -4,9 +4,9 @@ var buffer = require('buffer');
 
 var chai = require('chai');
 var should = chai.should();
-var ravencore = require('../../');
-var Script = ravencore.Script;
-var Transaction = ravencore.Transaction;
+var telestaicore = require('../../');
+var Script = telestaicore.Script;
+var Transaction = telestaicore.Transaction;
 var sighash = Transaction.sighash;
 
 var vectors_sighash = require('../data/sighash.json');

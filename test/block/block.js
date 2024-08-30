@@ -1,15 +1,15 @@
 'use strict';
 
-var ravencore = require('../..');
+var telestaicore = require('../..');
 var BN = require('../../lib/crypto/bn');
-var BufferReader = ravencore.encoding.BufferReader;
-var BufferWriter = ravencore.encoding.BufferWriter;
-var BlockHeader = ravencore.BlockHeader;
-var Block = ravencore.Block;
+var BufferReader = telestaicore.encoding.BufferReader;
+var BufferWriter = telestaicore.encoding.BufferWriter;
+var BlockHeader = telestaicore.BlockHeader;
+var Block = telestaicore.Block;
 var chai = require('chai');
 var fs = require('fs');
 var should = chai.should();
-var Transaction = ravencore.Transaction;
+var Transaction = telestaicore.Transaction;
 
 var dataRawBlockBuffer = fs.readFileSync('test/data/blk220909.dat');
 var dataRawBlockBinary = fs.readFileSync('test/data/blk220909.dat', 'binary');

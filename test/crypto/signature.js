@@ -2,11 +2,11 @@
 
 var _ = require('lodash');
 var should = require('chai').should();
-var ravencore = require('../..');
-var BN = ravencore.crypto.BN;
-var Signature = ravencore.crypto.Signature;
-var JSUtil = ravencore.util.js;
-var Interpreter = ravencore.Script.Interpreter;
+var telestaicore = require('../..');
+var BN = telestaicore.crypto.BN;
+var Signature = telestaicore.crypto.Signature;
+var JSUtil = telestaicore.util.js;
+var Interpreter = telestaicore.Script.Interpreter;
 
 var sig_canonical = require('../data/ravend/sig_canonical');
 var sig_noncanonical = require('../data/ravend/sig_noncanonical');

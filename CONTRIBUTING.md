@@ -1,7 +1,7 @@
-Contributing to Ravencore
+Contributing to Telestaicore
 =======
 
-We're working hard to make *ravencore* the most powerful JavaScript library for working with Ravencoin. Our goal is to have *ravencore* be a library that can be used by anyone interested in Ravencoin, and to level expertise differences with great design and documentation.
+We're working hard to make *telestaicore* the most powerful JavaScript library for working with Telestai. Our goal is to have *telestaicore* be a library that can be used by anyone interested in Telestai, and to level expertise differences with great design and documentation.
 
 ## Community
 
@@ -19,7 +19,7 @@ Ideally, please make sure to run:
 
 ## Design Guidelines
 
-These are some global design goals in ravencore that any change must adhere.
+These are some global design goals in telestaicore that any change must adhere.
 
 ### D1 - Naming Matters
 
@@ -39,7 +39,7 @@ Write a test for all your code. We encourage Test Driven Development so we know 
 
 Interfaces should accept as many types of arguments as possible, so there's no mental tax on using them: we want to avoid questions such as "should I use a string here or a buffer?", "what happens if I'm not sure if the type of this variable is an Address instance or a string with it encoded in base-58?" or "what kind of object will I receive after calling this function?".
 
-Accept a wide variety of use cases and arguments, always return an internal form of an object. For example, the class `PublicKey` can accept strings or buffers with a DER encoded public key (either compressed or uncompressed), another PublicKey, a PrivateKey, or a Point, an instance of the `elliptic.js` library with the point in ravencoin's elliptic curve that represents the public key.
+Accept a wide variety of use cases and arguments, always return an internal form of an object. For example, the class `PublicKey` can accept strings or buffers with a DER encoded public key (either compressed or uncompressed), another PublicKey, a PrivateKey, or a Point, an instance of the `elliptic.js` library with the point in telestai's elliptic curve that represents the public key.
 
 ### D4 - Consistency Everywhere
 
@@ -90,7 +90,7 @@ var bufferUtil = require('./util/buffer');
 
 #### G7 - Standard Methods
 
-When possible, ravencore objects should have standard methods on an instance prototype:
+When possible, telestaicore objects should have standard methods on an instance prototype:
 * `toObject/toJSON` - A plain JavaScript object that `JSON.stringify` can call
 * `toString` - A string representation of the instance
 * `toBuffer` - A hex Buffer
@@ -100,7 +100,7 @@ These should have a matching static method that can be used for instantiation:
 * `fromString` - Should be able to instantiate with output from `toString`
 * `fromBuffer` - Should likewise be able to instantiate from output from `toBuffer`
 
-`JSON.stringify` and `JSON.parse` are expected to be handled outside of the scope of Ravencore methods. For example, calling `JSON.stringify` on a Ravencore object will behave as expected and call `transaction.toJSON()` and then stringify it:
+`JSON.stringify` and `JSON.parse` are expected to be handled outside of the scope of Telestaicore methods. For example, calling `JSON.stringify` on a Telestaicore object will behave as expected and call `transaction.toJSON()` and then stringify it:
 
 ```javascript
 var transactionString = JSON.stringify(transaction);
@@ -115,7 +115,7 @@ var tx = new Transaction(data);
 
 ### Errors
 
-#### E1 - Use ravencore.Errors
+#### E1 - Use telestaicore.Errors
 
 We've designed a structure for Errors to follow and are slowly migrating to it.
 
@@ -205,14 +205,14 @@ Don't write long tests, write helper functions to make them be as short and conc
 
 Inputs for tests should not be generated randomly. Also, the type and structure of outputs should be checked.
 
-#### T3 - Require 'ravencore' and Look up Classes from There
+#### T3 - Require 'telestaicore' and Look up Classes from There
 
-This helps to make tests more useful as examples, and more independent of where they are placed. This also helps prevent forgetting to include all submodules in the ravencore object.
+This helps to make tests more useful as examples, and more independent of where they are placed. This also helps prevent forgetting to include all submodules in the telestaicore object.
 
 DO:
 ```javascript
-var ravencore = require('../');
-var PublicKey = ravencore.PublicKey;
+var telestaicore = require('../');
+var PublicKey = telestaicore.PublicKey;
 ```
 DON'T:
 ```javascript
@@ -245,7 +245,7 @@ git checkout -b remove/some-file
 
 We expect pull requests to be rebased to the master branch before merging:
 ```sh
-git remote add underdarkskies git@github.com:underdarkskies/ravencore.git
+git remote add underdarkskies git@github.com:underdarkskies/telestaicore.git
 git pull --rebase underdarkskies master
 ```
 
@@ -257,11 +257,11 @@ git push origin your_branch_name
 git push origin feature/some-new-stuff
 git push origin fix/some-bug
 ```
-Finally go to [github.com/underdarkskies/ravencore](https://github.com/underdarkskies/ravencore) in your web browser and issue a new pull request.
+Finally go to [github.com/Telestai-Project/telestai-lib](https://github.com/Telestai-Project/telestai-lib/telestaicore) in your web browser and issue a new pull request.
 
-Main contributors will review your code and possibly ask for changes before your code is pulled in to the main repository.  We'll check that all tests pass, review the coding style, and check for general code correctness. If everything is OK, we'll merge your pull request and your code will be part of ravencore.
+Main contributors will review your code and possibly ask for changes before your code is pulled in to the main repository.  We'll check that all tests pass, review the coding style, and check for general code correctness. If everything is OK, we'll merge your pull request and your code will be part of telestaicore.
 
 If you have any questions feel free to post them to
-[github.com/underdarkskies/ravencore/issues](https://github.com/underdarkskies/ravencore/issues).
+[github.com/Telestai-Project/telestai-lib/issues](https://github.com/Telestai-Project/telestai-lib/telestaicore/issues).
 
 Thanks for your time and code!

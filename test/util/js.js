@@ -4,8 +4,8 @@
 var should = require('chai').should();
 var expect = require('chai').expect;
 
-var ravencore = require('../..');
-var JSUtil = ravencore.util.js;
+var telestaicore = require('../..');
+var JSUtil = telestaicore.util.js;
 
 describe('js utils', function() {
 

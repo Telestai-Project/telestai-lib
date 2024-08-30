@@ -16,9 +16,9 @@ report
 .DS_Store
 
 
-ravencore.js
-ravencore.min.js
-ravencore.js.sig
-ravencore.min.js.sig
+telestaicore.js
+telestaicore.min.js
+telestaicore.js.sig
+telestaicore.min.js.sig
 tests.js
 package-lock.json

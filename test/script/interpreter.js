@@ -2,14 +2,14 @@
 
 var should = require('chai').should();
 var sinon = require('sinon');
-var ravencore = require('../..');
-var Interpreter = ravencore.Script.Interpreter;
-var Transaction = ravencore.Transaction;
-var PrivateKey = ravencore.PrivateKey;
-var Script = ravencore.Script;
-var BN = ravencore.crypto.BN;
-var BufferWriter = ravencore.encoding.BufferWriter;
-var Opcode = ravencore.Opcode;
+var telestaicore = require('../..');
+var Interpreter = telestaicore.Script.Interpreter;
+var Transaction = telestaicore.Transaction;
+var PrivateKey = telestaicore.PrivateKey;
+var Script = telestaicore.Script;
+var BN = telestaicore.crypto.BN;
+var BufferWriter = telestaicore.encoding.BufferWriter;
+var Opcode = telestaicore.Opcode;
 var _ = require('lodash');
 
 var script_tests = require('../data/ravend/script_tests');
